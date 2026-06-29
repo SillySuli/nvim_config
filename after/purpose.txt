@@ -1,0 +1,4 @@
+After directory is looked into by nvim after all the other folders and init.lua have been looked into.
+Hence after all the plugins have been installed, this is a good place to config them.
+It is a more proper way as it seperates installing of plugins and config into different files.
+However, I have just done it in the same file.
