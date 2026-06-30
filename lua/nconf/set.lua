@@ -48,7 +48,7 @@ vim.opt.colorcolumn = '+1'
     Setting up undo directory, where persistent undo files are stored. 
     Letting you undo beyond current vim session
 --]]
-vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" 
+vim.opt.undodir = os.getenv("HOME") .. "/.vim//undodir" 
 vim.opt.undofile = true -- ( Turn the undo presistence on )
 
 -- Universal copy and paste, scheduled after `UiEnter` for faster start-up time
