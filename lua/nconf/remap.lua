@@ -9,3 +9,6 @@ vim.keymap.set( 'n', '<left>', '<cmd>echo "Use h to move left!" <CR>')
 vim.keymap.set( 'n', '<right>', '<cmd>echo "Use l to move right!" <CR>')
 vim.keymap.set( 'n', '<up>', '<cmd>echo "use k to move up!" <CR>')
 vim.keymap.set( 'n', '<down>', '<cmd>echo "use j to move down!" <CR>')
+
+-- Quick setting to get config editing
+vim.keymap.set( 'n', '<leader>rc', ':e ~/.config/nvim/lua/nconf/remap.lua<CR>')
