@@ -5,6 +5,8 @@ This is my configuration for neovim that I use.
 - Plugins set up are:
     - [x] Telescope
     - [x] Colour Scheme
+    - [x] mini
+    - [x] Todo-comments
     - [ ] Status line
     - [ ] Oil
     - [ ] Treesitter

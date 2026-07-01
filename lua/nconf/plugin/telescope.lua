@@ -1,10 +1,5 @@
 -- -- Installation
--- "nvim-telescope/telescope.nvim",
--- tag = "0.2.2",
--- dependencies = { "nvim-lua/plenary.nvim",
--- "nvim-telescope/telescope-ui-select.nvim",
--- "nvim-telescope/telescope-file-browser.nvim",
--- },
+
 local telescope_plugins = {
     gh 'nvim-lua/plenary.nvim',
     gh 'nvim-telescope/telescope.nvim',

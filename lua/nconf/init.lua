@@ -22,3 +22,10 @@ require('nconf.plugin.telescope')
 -- Include colour Scheme
 require('nconf.plugin.kanagawa')
 
+-- Include mini and various plugins
+require('nconf.plugin.mini')
+
+-- Indclude todo comments
+require('nconf.plugin.todo')
+
+
