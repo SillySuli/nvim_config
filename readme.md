@@ -3,4 +3,10 @@ This is my configuration for neovim that I use.
 - Remappings are in remap.lua
 - Plugin manager used is Lazy.nvim
 - Plugins set up are:
-    - Telescope
+    - [x] Telescope
+    - [ ] Colour Scheme
+    - [ ] Status line
+    - [ ] Oil
+    - [ ] Treesitter
+    - [ ] LSP
+    - [ ] Harpoon ( maybe )
