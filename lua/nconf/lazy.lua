@@ -1,4 +1,5 @@
 -- Bootstrap lazy.nvim
+-- Currently not used, made redundant by vim.pack
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -21,7 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         -- import your plugins
-       { import = "nconf.lazy_plugins" },
+       -- { import = "nconf.plugin.kaw" },
     },
     -- Configure all you othwer setting here. See the documentation.
     -- colourshceme that will be used when installing plugins.
