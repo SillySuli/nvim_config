@@ -28,4 +28,5 @@ require('nconf.plugin.mini')
 -- Indclude todo comments
 require('nconf.plugin.todo')
 
-
+-- Include Lualine
+require('nconf.plugin.lualine')
