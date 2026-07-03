@@ -7,8 +7,9 @@ This is my configuration for neovim that I use.
     - [x] Colour Scheme
     - [x] mini
     - [x] Todo-comments
-    - [ ] Status line
-    - [ ] Oil
+    - [x] Status line
+    - [x] Fidget
     - [ ] Treesitter
     - [ ] LSP
+    - [ ] Oil
     - [ ] Harpoon ( maybe )
