@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
         local kind = ev.data.kind
         if kind ~= 'install' and kind ~= 'update' then return end
 
+        -- Treesitter autocmd that get run to keep installed parsers up to date.
         if name == 'nvim-treesitter' then
             if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
             vim.cmd 'TSUpdate'
@@ -47,8 +48,6 @@ require('nconf.plugin.lualine')
 -- Include Treesitter
 require('nconf.plugin.treesitter')
 
--- Include Fidget
-require('nconf.plugin.fidget')
 
 -- Include LSP
 
@@ -78,4 +77,79 @@ require('nconf.plugin.fidget')
   -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
   -- and elegantly composed help section, `:help lsp-vs-treesitter`
   
+-- Include Fidget
+-- Useful status updates for LSP on bottom right window
+require('nconf.plugin.fidget')
+
+-- Function that gets run when an LSP attaches itself to a current buffer
+-- and configure LSP.
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('kickstart-lsp-attach', {clear = true}),
+    callback = function(event)
+
+
+    local map = function(mode, keys, func, desc)
+        mode = mode or 'n'
+        vim.keymap.set(
+            mode,
+            keys,
+            func,
+            {buffer = event.buf, desc = 'LSP: ' .. desc })
+    end
+  
+    -- Active Buffer keybinds
+    -- Rename the variable under your cursor
+    map('grn', vim.lsp.buf.rename, '[G]o [R]e[n]ame')
+
+    -- Execute code action, usually your
+    -- Cursor need to be on top of a error or suggestions from LSP to activate
+    map('gta', vim.lsp.buf.code_action, '[G]o[t]o Code [A]ction')
+    
+
+    -- Go to Declaration
+    maps('gtd', vim.lsp.buf.declaration, '[G]o[t]o [D]eclaration')
+    
+    -- Go to Definition
+    maps('gtD', vim.lsp.buf.definition, '[G]o[t]o [D]efinition')
+    
+    -- Go to implementation
+    maps('gti', vim.lsp.buf.implementation, '[G]o[t]o [I]mplementation')
+
+    -- Highlight references word under cursor while cursor on the word
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+    if client and client:supports_method(
+        'textDocument/documentHighlight',
+        event.buf)
+        then
+            local highlight_augroup = vim.api.nvim_create_augroup(
+                'kickstart-lsp-highlight',
+                {clear = false})
+
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI'},{
+                buffer = event.buf,
+                group = highlight_augroup,
+                callback = vim.lsp.buf.document_highlight,
+            })
+
+            vim.api.nvim.create_autocmd({'CursorMoved', 'CursorMovedI'}, {
+                buffer = event.buf,
+                group = highlight_augroup,
+                callback = vim.lsp.buf.clear_references,
+            })
+
+            vim.api.nvim.create_autocmd('LspDetach', {
+                group = vim.api.nvim_create_augroup(
+                    'kickstart-lsp-detach',
+                    {clear = true}),
+                callback = function(event2)
+                    vim.lsp.buf.clear_references()
+                    vim.api.nvim_clear_autocmds{
+                        group = 'kickstart-lsp-highlight',
+                        buffer = event2.buf}
+                    end,
+                })
+            end
+        end,
+    })
 
