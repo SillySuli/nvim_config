@@ -156,3 +156,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 require('nconf.plugin.LSP')
+
+-- Autocomplete with blink
+require('nconf.plugin.blink')
