@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(event)
 
 
-    local map = function(mode, keys, func, desc)
+    local map = function(keys, func, desc, mode)
         mode = mode or 'n'
         vim.keymap.set(
             mode,
@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             func,
             {buffer = event.buf, desc = 'LSP: ' .. desc })
     end
-  
+
     -- Active Buffer keybinds
     -- Rename the variable under your cursor
     map('grn', vim.lsp.buf.rename, '[G]o [R]e[n]ame')
@@ -104,16 +104,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Execute code action, usually your
     -- Cursor need to be on top of a error or suggestions from LSP to activate
     map('gta', vim.lsp.buf.code_action, '[G]o[t]o Code [A]ction')
-    
+
+
+    -- Go to Definition
+    map('gtd', vim.lsp.buf.definition, '[G]o[t]o [D]efinition')
 
     -- Go to Declaration
-    maps('gtd', vim.lsp.buf.declaration, '[G]o[t]o [D]eclaration')
-    
-    -- Go to Definition
-    maps('gtD', vim.lsp.buf.definition, '[G]o[t]o [D]efinition')
-    
+    map('gtD', vim.lsp.buf.declaration, '[G]o[t]o [D]eclaration')
+
+
     -- Go to implementation
-    maps('gti', vim.lsp.buf.implementation, '[G]o[t]o [I]mplementation')
+    map('gti', vim.lsp.buf.implementation, '[G]o[t]o [I]mplementation')
 
     -- Highlight references word under cursor while cursor on the word
     local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -132,13 +133,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 callback = vim.lsp.buf.document_highlight,
             })
 
-            vim.api.nvim.create_autocmd({'CursorMoved', 'CursorMovedI'}, {
+            vim.api.nvim_create_autocmd({'CursorMoved', 'CursorMovedI'}, {
                 buffer = event.buf,
                 group = highlight_augroup,
                 callback = vim.lsp.buf.clear_references,
             })
 
-            vim.api.nvim.create_autocmd('LspDetach', {
+            vim.api.nvim_create_autocmd('LspDetach',{
                 group = vim.api.nvim_create_augroup(
                     'kickstart-lsp-detach',
                     {clear = true}),
@@ -153,3 +154,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end,
     })
 
+
+require('nconf.plugin.LSP')

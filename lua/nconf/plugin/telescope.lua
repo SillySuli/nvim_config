@@ -43,3 +43,4 @@ vim.keymap.set({'n', 'v'}, '<leader>sw', builtin.grep_string, {desc = '[S]earch 
 vim.keymap.set( 'n', '<leader>fb'
 , ':Telescope file_browser path=%:p:h select_buffer=true<CR>',
 { desc = '[F]ile [B]rowse' })
+
