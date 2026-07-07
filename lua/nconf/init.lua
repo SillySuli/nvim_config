@@ -30,8 +30,6 @@ vim.api.nvim_create_autocmd('PackChanged', {
 -- Helper function to reduce repetition
 function gh(repo) return 'https://github.com/' .. repo end
 
--- Include Telescope
-require('nconf.plugin.telescope')
 
 -- Include colour Scheme
 require('nconf.plugin.kanagawa')
@@ -159,3 +157,6 @@ require('nconf.plugin.LSP')
 
 -- Autocomplete with blink
 require('nconf.plugin.blink')
+
+-- Include Telescope
+require('nconf.plugin.telescope')

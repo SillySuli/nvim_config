@@ -45,3 +45,22 @@ vim.keymap.set( 'n', '<leader>fb'
 , ':Telescope file_browser path=%:p:h select_buffer=true<CR>',
 { desc = '[F]ile [B]rowse' })
 
+-- Override default behaviour and theme when searching
+vim.keymap.set('n', '<leader>/', function()
+    -- Can further customise if you want
+    builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
+end,{desc = '[/] Fuzzily search in current buffer'})
+
+-- Search open buffers.
+vim.keymap.set('n', '<leader>s/', function()
+    -- Can further customise if you want
+    builtin.live_grep { 
+        grep_open_files = true,
+        prompt_title = 'Liv Grep in Open Files',
+    }
+end,{desc = '[S]earch [/] in open files'})
+
+

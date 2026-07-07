@@ -11,5 +11,6 @@ This is my configuration for neovim that I use.
     - [x] Fidget
     - [ ] Treesitter
     - [x] LSP
+    - [ ] Conform
     - [ ] Oil ( maybe )
     - [ ] Harpoon ( maybe )
