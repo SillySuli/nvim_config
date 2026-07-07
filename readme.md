@@ -10,6 +10,6 @@ This is my configuration for neovim that I use.
     - [x] Status line
     - [x] Fidget
     - [ ] Treesitter
-    - [ ] LSP
-    - [ ] Oil
+    - [x] LSP
+    - [ ] Oil ( maybe )
     - [ ] Harpoon ( maybe )
