@@ -13,7 +13,7 @@ require('kanagawa').setup({
             -- Blink completion menu ( Apperance )
             BlinkCmpMenu          = { bg = theme.ui.bg_p1 },
             BlinkCmpMenuBorder    = { fg = theme.ui.special },
-            BlinkCmpMenuSelection = { bg = theme.ui.bg_search },
+            BlinkCmpMenuSelection = { bg = theme.ui.bg_dim},
             BlinkCmpLabel         = { fg = theme.ui.fg },
         }
     end,

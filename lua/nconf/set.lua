@@ -6,7 +6,7 @@
 -- convenient interacting with tables.
 
 -- Choosing a Cursor
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 -- Tab settings
 vim.opt.tabstop = 4

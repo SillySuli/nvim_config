@@ -160,6 +160,6 @@ require('nconf.plugin.telescope')
 -- Include colour Scheme
 require('nconf.plugin.kanagawa')
 
-
-
+-- Include Treesitter
+require('nconf.plugin.treesitter')
 
