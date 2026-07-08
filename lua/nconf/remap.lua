@@ -29,3 +29,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Diagnostic buffer opening
+vim.keymap.set('n', "<leader>od", vim.diagnostic.open_float,
+    { desc = '[O]pen [D]iagnostic' })
+

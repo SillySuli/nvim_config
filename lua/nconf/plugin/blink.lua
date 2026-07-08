@@ -14,6 +14,7 @@ require('blink.cmp').setup{
         -- <C-space> will show documentation, but can be changed to auto
         documentation = {
             auto_show = false,
+            auto_show_delay_ms = 500,
             window = {
                 border = 'none',
             },
