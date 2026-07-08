@@ -9,7 +9,7 @@ This is my configuration for neovim that I use.
     - [x] Todo-comments
     - [x] Status line
     - [x] Fidget
-    - [ ] Treesitter
+    - [x] Treesitter
     - [x] LSP
     - [ ] Conform
     - [ ] Oil ( maybe )
