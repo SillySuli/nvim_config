@@ -7,10 +7,18 @@ require('blink.cmp').setup{
     },
 
     completion = {
-        -- <C-space> will show documentation, but can be changed to auto
-        documentation = {auto_show = false},
-    },
+        menu = {
+            border = 'none',
+        },
 
+        -- <C-space> will show documentation, but can be changed to auto
+        documentation = {
+            auto_show = false,
+            window = {
+                border = 'none',
+            },
+        },
+    },
     appearance = {
         nerd_font_variant = 'mono'
     },
