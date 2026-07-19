@@ -25,7 +25,7 @@ require('blink.cmp').setup{
     },
 
     sources = {
-        defualt = { 'lsp', 'path' }
+        default= { 'lsp', 'path' }
     },
 
     fuzzy = { implementation = 'lua' },

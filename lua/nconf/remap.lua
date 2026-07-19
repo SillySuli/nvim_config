@@ -33,3 +33,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set('n', "<leader>od", vim.diagnostic.open_float,
     { desc = '[O]pen [D]iagnostic' })
 
+
+-- ============================================================================
+-- Buffers
+-- ============================================================================
+
+-- View all buffers
+vim.keymap.set('n', "<leader>vb", ":buffers<CR>" , {desc = "[V]iew [B]uffers"})
+
+-- Close all buffers except current 1.
+vim.keymap.set('n', "<leader>bc", ":%bd|e#|bd#<CR>" , {desc = "[B]uffer [C]"})
