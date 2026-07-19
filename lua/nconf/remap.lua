@@ -1,7 +1,7 @@
 -- ( Lua containing all persomal remap )
 
 -- Remap to go to nvim's directory listing
-vim.keymap.set("n", "<leader>dl", vim.cmd.Ex, { desc = "Go to Directory listing" } ) -- ( dl = "directory listing" )
+vim.keymap.set("n", "<leader>ef", vim.cmd.Ex, { desc = "[E]plore [F]iles" } ) -- ( dl = "directory listing" )
 
 -- Escaping all highlighting
 vim.keymap.set("n", '<Esc>', vim.cmd.noh, { desc = "Clear all highlight when Esc is pressed"} )
@@ -30,8 +30,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Diagnostic buffer opening
-vim.keymap.set('n', "<leader>od", vim.diagnostic.open_float,
-    { desc = '[O]pen [D]iagnostic' })
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.jump({ count = 1})
+end, { desc = 'Next diagnostic' })
+
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.jump({ count = -1, })
+end, { desc = 'Previous diagnostic' })
+
+vim.keymap.set('n', "<leader>e", vim.diagnostic.open_float,
+    { desc = 'Show diagnostic [E]rror message' })
 
 
 -- ============================================================================
@@ -42,4 +50,7 @@ vim.keymap.set('n', "<leader>od", vim.diagnostic.open_float,
 vim.keymap.set('n', "<leader>vb", ":buffers<CR>" , {desc = "[V]iew [B]uffers"})
 
 -- Close all buffers except current 1.
-vim.keymap.set('n', "<leader>bc", ":%bd|e#|bd#<CR>" , {desc = "[B]uffer [C]"})
+vim.keymap.set('n', "<leader>bc", ":%bd|e#|bd#<CR>" , {desc = "[B]uffer [C]lose"})
+
+-- shifting through buffers
+vim.keymap.set('n', "<leader>b", ":b " , {desc = "[B]uffer shifting"})

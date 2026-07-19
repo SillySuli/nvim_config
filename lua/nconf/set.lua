@@ -101,7 +101,18 @@ vim.diagnostic.config{
     float = { border = 'rounded', source = 'if_many' },
     underlie = { sverity = { min = vim.diagnostic.severity.WARN }},
 
-    virtural_text = true -- Test show up at the end of the line
+    virtural_text = true, -- Test show up at the end of the line
+
+    -- Auto open float, so you and read errors when jumping
+    jump = {
+        on_jump = function(_, bufnr)
+            vim.diagnostic.open_float{
+                bufnr = bufnr,
+                scope = 'cursor',
+                focus = false,
+            }
+        end,
+    }
 }
 
 -- ============================================================================
