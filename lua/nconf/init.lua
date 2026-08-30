@@ -169,6 +169,3 @@ require('nconf.plugin.treesitter')
 -- Include Conform
 require('nconf.plugin.conform')
 
--- Include Skeleton templates
-require('nconf.skeleton_autocmd')
-
