@@ -12,6 +12,7 @@ This is my configuration for neovim that I use.
     - [x] Treesitter
     - [x] LSP
     - [x] Guess Indent
+    - [x] LuaSnip
     - [ ] Which-key
     - [ ] Conform
     - [ ] Oil ( maybe )

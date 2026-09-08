@@ -24,8 +24,9 @@ require('blink.cmp').setup{
         nerd_font_variant = 'mono'
     },
 
+    snippets = { preset = "luasnip" },
     sources = {
-        default= { 'lsp', 'path' }
+        default= { 'lsp', 'path', 'snippets' }
     },
 
     fuzzy = { implementation = 'lua' },

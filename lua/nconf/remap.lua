@@ -1,6 +1,3 @@
--- ( Lua containing all persomal remap )
-require("nconf.skeletonCode")
-
 -- Remap to go to nvim's directory listing
 vim.keymap.set("n", "<leader>ef", vim.cmd.Ex, { desc = "[E]plore [F]iles" } ) -- ( dl = "directory listing" )
 
@@ -56,10 +53,3 @@ vim.keymap.set('n', "<leader>bc", ":%bd|e#|bd#<CR>" , {desc = "[B]uffer [C]lose"
 -- shifting through buffers
 vim.keymap.set('n', "<leader>b", ":b " , {desc = "[B]uffer shifting"})
 
-
--- ============================================================================
--- Seleton codes remaps
--- ============================================================================
-
--- Html remap
-vim.keymap.set('n', "<leader>html", html_boiler, {desc = "Write html boiler plate"})

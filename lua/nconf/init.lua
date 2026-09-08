@@ -151,12 +151,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('nconf.plugin.LSP')
 
--- Autocomplete with blink
-require('nconf.plugin.blink')
-
--- Include Telescope
-require('nconf.plugin.telescope')
-
 -- Include colour Scheme
 require('nconf.plugin.kanagawa')
 
@@ -169,3 +163,11 @@ require('nconf.plugin.treesitter')
 -- Include Conform
 require('nconf.plugin.conform')
 
+-- Include LuaSnip
+require('nconf.plugin.luaSnip')
+
+-- Autocomplete with blink
+require('nconf.plugin.blink')
+
+-- Include Telescope
+require('nconf.plugin.telescope')
