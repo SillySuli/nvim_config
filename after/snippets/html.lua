@@ -6,12 +6,14 @@ local i = ls.insert_node
 return {
     s("boiler", {
         t({"<!DOCTYPE html>",
-            '<html lang="en">',
+        '<html lang="en">',
+        "",
         "  <head>",
         '    <meta charset="UTF-8">'
         ,""}),
-        t("    <title>"), i(1), t({"</title>"}),
+        t("", "    <title>"), i(1), t({"</title>"}),
         t({"", "  </head>",
+            "",
             "  <body>"}),
         i(0, ""),
         t({"", "  </body>",
