@@ -11,7 +11,7 @@ return {
         "  <head>",
         '    <meta charset="UTF-8">'
         ,""}),
-        t("", "    <title>"), i(1), t({"</title>"}),
+        t({ "    <title>"}), i(1), t({"</title>"}),
         t({"", "  </head>",
             "",
             "  <body>"}),
