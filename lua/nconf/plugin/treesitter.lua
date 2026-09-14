@@ -11,6 +11,7 @@ local parsers = {
     'diff',
     'html',
     'lua',
+    'css',
     'luadoc',
     'markdown',
     'markdown_inline',

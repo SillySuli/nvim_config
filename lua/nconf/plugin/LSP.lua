@@ -5,6 +5,8 @@ local servers = {
     pyright = {},   -- Python
     bashls = {},    -- bash lsp (fixed: was 'bash', correct name is 'bashls')
     jdtls = {},     -- Java lsp
+    html = {},      -- Html lsp
+    cssls = {},     -- CSS lsp
     -- Special Lua config recommended by neovim.
     -- Specifically fine tune to edit nvim config files
     -- Letting the Lua server know it is running inside nvim config

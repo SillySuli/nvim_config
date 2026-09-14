@@ -24,6 +24,7 @@ require('telescope').setup({
     },
 })
 
+
 -- Activiting any extenstions, if they installed
 pcall( require('telescope').load_extension, 'ui-select')
 pcall( require('telescope').load_extension, 'file_browser') -- If this annoys you later remove it
