@@ -7,6 +7,7 @@ local servers = {
     jdtls = {},     -- Java lsp
     html = {},      -- Html lsp
     cssls = {},     -- CSS lsp
+    vtsls = {},     -- JS & TS lsp.
     -- Special Lua config recommended by neovim.
     -- Specifically fine tune to edit nvim config files
     -- Letting the Lua server know it is running inside nvim config
