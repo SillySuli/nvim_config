@@ -17,7 +17,8 @@ local parsers = {
     'markdown_inline',
     'query',
     'vim',
-    'vimdoc'
+    'vimdoc',
+    'javascript',
 }
 
 local function treesitter_try_attach(buf, language)
