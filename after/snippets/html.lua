@@ -10,8 +10,7 @@ return {
         "",
         "  <head>",
         '    <meta charset="UTF-8">',
-        '    <link rel="stylesheet" href="styles.css"/>'
-        ,""}),
+        '<link rel="stylesheet" href="styles.css"'}),
         t({ "    <title>"}), i(1), t({"</title>"}),
         t({"", "  </head>",
             "",
